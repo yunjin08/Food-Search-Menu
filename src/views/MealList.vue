@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white"><p>Meal List</p></div>
+  <div class="text-black"><p>Meal List</p></div>
 </template>
 
 <script setup></script>
