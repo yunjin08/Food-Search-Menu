@@ -38,6 +38,11 @@ const routes = [
     path: "/auth",
     component: GuestLayout,
   },
+  {
+    path: "/meal:id",
+    name: "mealDetails",
+    component: MealDetails,
+  },
 ];
 
 const router = createRouter({
