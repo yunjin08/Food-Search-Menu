@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8 px-24">
+  <div class="p-8 pb-0 px-24">
     <input
       v-model="keyword"
       type="text"
@@ -15,24 +15,35 @@
       :key="meal.idMeal"
       class="bg-white shadow rounded-xl"
     >
-      <img
-        :src="meal.strMealThumb"
-        :alt="meal.strMeal"
-        class="rounded-t-xl h-64 w-full object-cover"
-      />
-      <h3 class="p-3 font-semibold">{{ meal.strMeal }}</h3>
+      <router-link to="/">
+        <img
+          :src="meal.strMealThumb"
+          :alt="meal.strMeal"
+          class="rounded-t-xl h-64 w-full object-cover"
+        />
+      </router-link>
       <div class="p-3">
-        <a :href="meal.strYoutube" target="_blank">Youtube</a>
-        <router-link to="/">View</router-link>
+        <h3 class="bold">{{ meal.strMeal }}</h3>
+        <p>S</p>
+        <div class="flex items-center justify-between">
+          <a
+            :href="meal.strYoutube"
+            target="_blank"
+            class="px-3 py-2 rounded border-2 border-red-500 bg-red-500 hover:bg-red-600 text-white transition-colors"
+            >Youtube</a
+          >
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import store from "../store";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
 const keyword = ref("");
 const meals = computed(() => {
   return store.state.searchedMeals.data;
@@ -41,4 +52,11 @@ const meals = computed(() => {
 const searchMeals = () => {
   store.dispatch("searchMeals", keyword.value);
 };
+
+onMounted(() => {
+  keyword.value = route.params.name;
+  if (keyword.value) {
+    searchMeals();
+  }
+});
 </script>
