@@ -6,7 +6,7 @@ import MealsByName from "../views/MealsByName.vue";
 import MealsByIngredients from "../views/MealsByIngredients.vue";
 import GuestLayout from "../components/GuestLayout.vue";
 import DefaultLayout from "../components/DefaultLayout.vue";
-import MealDetails from "../components/MealDetails.vue";
+import MealDetails from "../views/MealDetails.vue";
 
 const routes = [
   {
