@@ -5,3 +5,15 @@ export const searchMeals = ({ commit }, keyword) => {
     commit("setSearchedMeals", data.meals);
   });
 };
+
+export const searchMealsByLetter = ({ commit }, letter) => {
+  axiosClient.get(`search.php?f=${letter}`).then(({ data }) => {
+    commit("setMealsByLetter", data.meals);
+  });
+};
+
+export const searchMealsByIngredients = ({ commit }, ingredients) => {
+  axiosClient.get(`filter.php?i=${ingredients}`).then(({ data }) => {
+    commit("setMealsByIngredients", data.meals);
+  });
+};
