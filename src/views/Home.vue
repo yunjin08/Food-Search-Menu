@@ -1,10 +1,13 @@
 <template>
   <div class="grid grid-cols-3">
     <img src="../images/bg1.jpg" class="object-cover h-[43.5rem]" alt="bg1" />
-    <div class="w-[33%vw] h-full flex items-center justify-center">
-      <h1 class="calligraphy-paragraph text-8xl font-bold text-[#45eAms]">
+    <div class="w-[33%vw] h-full flex flex-col items-center justify-center">
+      <h1 class="calligraphy-paragraph text-8xl font-bold text-[#E4DB84]">
         NoshNest
       </h1>
+      <h2 class="calligraphy-paragraph text-4xl font-bold text-[#E8DF91]">
+        Recipe Website
+      </h2>
     </div>
     <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
   </div>
