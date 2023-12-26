@@ -1,7 +1,14 @@
 <template>
   <header
-    class="bg-white shadow-md h-20 flex justify-between items-stretch px-10"
+    class="bg-white shadow-md h-16 flex justify-between items-stretch px-10"
   >
+    <img
+      src="../images/bg3.webp"
+      class="object-cover absolute w-[100vw] h-16 left-0 opacity-[0.3] pointer-events-none"
+      alt="bg-3"
+    />
+  </header>
+  <div class="bg-white shadow-md h-20 flex justify-between items-stretch px-10">
     <router-link
       :to="{ name: 'home' }"
       class="inline-flex items-center h-full px-1"
@@ -28,5 +35,5 @@
         Meals by Ingredients
       </router-link>
     </div>
-  </header>
+  </div>
 </template>
