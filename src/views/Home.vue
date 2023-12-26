@@ -1,7 +1,11 @@
 <template>
   <div class="grid grid-cols-3">
-    <img src="../images/bg1.jpg" class="" alt="bg1" />
-    <p class="w-[33%vw] calligraphy-paragraph">Hi there</p>
+    <img src="../images/bg1.jpg" class="object-cover h-[43.5rem]" alt="bg1" />
+    <div class="w-[33%vw] h-full flex items-center justify-center">
+      <h1 class="calligraphy-paragraph text-8xl font-bold text-[#45eAms]">
+        NoshNest
+      </h1>
+    </div>
     <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
   </div>
 </template>
