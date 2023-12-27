@@ -8,7 +8,17 @@
       @change="searchMeals"
     />
   </div>
-  <BackDrop v-if="isLoading" />
+  <div
+    v-if="meals.length === 0"
+    class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24"
+  >
+    <MealPreview
+      v-for="ingredient of ingredients"
+      :key="ingredient.idCategory"
+      :meal="ingredient"
+    />
+  </div>
+  <Loading v-if="isLoading" />
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 px-24">
     <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
@@ -24,11 +34,16 @@ import { ref, computed, onMounted } from "vue";
 import store from "../store";
 import MealItem from "../components/MealItem.vue";
 import { useRoute } from "vue-router";
+import axiosClient from "../axiosClient";
 import BackDrop from "../components/BackDrop.vue";
+import Loading from "../components/Loading.vue";
+import MealPreview from "../components/MealPreview.vue";
 
 const route = useRoute();
 const keyword = ref("");
 const isLoading = ref(true);
+const ingredients = ref([]);
+
 const meals = computed(() => {
   return store.state.searchedMeals.data;
 });
@@ -38,15 +53,23 @@ const searchMeals = async () => {
     await store.dispatch("searchMeals", keyword.value);
   } catch (error) {
     console.log(error);
-  } finally {
-    isLoading.value = false;
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
   keyword.value = route.params.name;
   if (keyword.value) {
     searchMeals();
+  }
+
+  try {
+    const response = await axiosClient.get("/categories.php");
+    ingredients.value = response.data.categories;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    //Set Loading to False
+    isLoading.value = false;
   }
 });
 </script>
