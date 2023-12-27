@@ -27,6 +27,7 @@
       Appetizers to desserts, streamline your search and discover a world of
       diverse recipes designed to suit every taste and occasion.
     </p>
+    <Loading v-if="isLoading" />
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24">
       <MealPreview
         v-for="(ingredient, index) of ingredients"
@@ -42,21 +43,27 @@ import { computed, onMounted, ref } from "vue";
 import store from "../store";
 import axiosClient from "../axiosClient";
 import MealPreview from "../components/MealPreview.vue";
+import Loading from "../components/Loading.vue";
 
 const meals = computed(() => store.state.meals);
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const ingredients = ref([]);
 const randomNumber = Math.floor(Math.random() * 10) + 1;
 const secondNumber = randomNumber + 4;
-console.log(randomNumber);
-console.log(secondNumber);
+const isLoading = ref(true); //Set Inital loading State
 
 onMounted(async () => {
-  const response = await axiosClient.get("/categories.php");
-  console.log(response.data);
-  ingredients.value = response.data.categories.slice(
-    randomNumber,
-    secondNumber
-  );
+  try {
+    const response = await axiosClient.get("/categories.php");
+    ingredients.value = response.data.categories.slice(
+      randomNumber,
+      secondNumber
+    );
+  } catch (error) {
+    console.log(error);
+  } finally {
+    //Set Loading to False
+    isLoading.value = false;
+  }
 });
 </script>

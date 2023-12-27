@@ -8,6 +8,8 @@
       @change="searchMeals"
     />
   </div>
+  <BackDrop v-if="isLoading" />
+
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 px-24">
     <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
   </div>
@@ -22,15 +24,23 @@ import { ref, computed, onMounted } from "vue";
 import store from "../store";
 import MealItem from "../components/MealItem.vue";
 import { useRoute } from "vue-router";
+import BackDrop from "../components/BackDrop.vue";
 
 const route = useRoute();
 const keyword = ref("");
+const isLoading = ref(true);
 const meals = computed(() => {
   return store.state.searchedMeals.data;
 });
 
-const searchMeals = () => {
-  store.dispatch("searchMeals", keyword.value);
+const searchMeals = async () => {
+  try {
+    await store.dispatch("searchMeals", keyword.value);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    isLoading.value = false;
+  }
 };
 
 onMounted(() => {

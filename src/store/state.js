@@ -1,14 +1,14 @@
 export default {
   searchedMeals: {
-    loading: false,
+    loading: true,
     data: [],
   },
   mealsByLetter: {
-    loading: false,
+    loading: true,
     data: [],
   },
   mealsByIngredients: {
-    loading: false,
+    loading: true,
     data: [],
   },
 };
