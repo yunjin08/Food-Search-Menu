@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white h-[30rem] shadow border-[1px] border-[#E8DF91] rounded-xl my-8 overflow-scroll"
+    class="bg-white h-[30rem] shadow border-[1px] border-[#a49c53] rounded-xl mb-10 overflow-scroll"
   >
     <div>
       <img

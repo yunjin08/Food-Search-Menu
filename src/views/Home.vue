@@ -19,7 +19,14 @@
     </div>
     <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
   </div>
-  <div class="bg-[#f9f9f2] h-62">
+  <div class="bg-[#f9f9f2] px-8 flex items-center flex-col justify-center h-62">
+    <h1 class="font-serif mt-10 text-2xl font-medium text-[#696223]">
+      Browse Food Menus and Recipes in Different Categories
+    </h1>
+    <p class="text-[#9b923b] max-w-[30rem] text-center">
+      Appetizers to desserts, streamline your search and discover a world of
+      diverse recipes designed to suit every taste and occasion.
+    </p>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24">
       <MealPreview
         v-for="(ingredient, index) of ingredients"
