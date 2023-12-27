@@ -8,8 +8,19 @@
       <h2 class="calligraphy-paragraph text-4xl font-bold text-[#E8DF91]">
         Recipe Website
       </h2>
+      <p
+        class="max-w-[25rem] font-serif text-lg mt-5 text-center text-[#a9a368]"
+      >
+        Explore a treasure trove of mouthwatering recipes crafted with love and
+        passion. From quick and easy weeknight meals to indulgent desserts that
+        satisfy your sweet tooth, our collection is designed to inspire both
+        novice cooks and seasoned chefs.
+      </p>
     </div>
     <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
+  </div>
+  <div class="h-60 bg-white">
+    <pre>{{ ingredients }}</pre>
   </div>
 </template>
 
