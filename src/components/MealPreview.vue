@@ -1,16 +1,15 @@
 <template>
-  <div class="bg-white shadow rounded-xl">
-    <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
+  <div class="bg-white shadow border-[1px] border-[#E8DF91] rounded-xl">
+    <div>
       <img
-        :src="meal.strMealThumb"
-        :alt="meal.strMeal"
+        :src="meal.strCategoryThumb"
+        :alt="meal.strCategory"
         class="rounded-t-xl h-64 w-full object-cover"
       />
-    </router-link>
+    </div>
     <div class="p-3">
-      <h3 class="bold">{{ meal.strMeal }}</h3>
-      <p>S</p>
-      <div class="flex items-center justify-between">
+      <h3 class="bold font-serif mt-2 text-xl">{{ meal.strCategory }}</h3>
+      <div class="flex items-center justify-between my-2">
         <a
           :href="meal.strYoutube"
           target="_blank"

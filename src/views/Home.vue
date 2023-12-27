@@ -19,8 +19,14 @@
     </div>
     <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
   </div>
-  <div class="h-60 bg-white">
-    <pre>{{ ingredients }}</pre>
+  <div class="bg-[#eeeee1] h-62">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24">
+      <MealPreview
+        v-for="(ingredient, index) of ingredients.splice(1, 4)"
+        :key="ingredient.idCategory"
+        :meal="ingredient"
+      />
+    </div>
   </div>
 </template>
 
@@ -28,7 +34,7 @@
 import { computed, onMounted, ref } from "vue";
 import store from "../store";
 import axiosClient from "../axiosClient";
-import MealItem from "../components/MealItem.vue";
+import MealPreview from "../components/MealPreview.vue";
 
 const meals = computed(() => store.state.meals);
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
