@@ -19,7 +19,7 @@
     </div>
     <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
   </div>
-  <div class="bg-[#eeeee1] h-62">
+  <div class="bg-[#f9f9f2] h-62">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24">
       <MealPreview
         v-for="(ingredient, index) of ingredients"
