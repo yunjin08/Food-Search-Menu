@@ -35,7 +35,6 @@ import store from "../store";
 import MealItem from "../components/MealItem.vue";
 import { useRoute } from "vue-router";
 import axiosClient from "../axiosClient";
-import BackDrop from "../components/BackDrop.vue";
 import Loading from "../components/Loading.vue";
 import MealPreview from "../components/MealPreview.vue";
 

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white h-[30rem] shadow border-[1px] border-[#a49c53] rounded-xl mb-10 overflow-y-scroll"
+    class="bg-white custom-scrollbar h-[30rem] shadow border-[1px] border-[#a49c53] rounded-xl mb-10 overflow-y-auto"
   >
     <div>
       <img
@@ -28,3 +28,18 @@ const { meal } = defineProps({
   },
 });
 </script>
+
+<style scoped>
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px; /* Set the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a49c53; /* Set the color of the scrollbar thumb */
+  border-radius: 6px; /* Set the border-radius of the scrollbar thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Set the color of the scrollbar track */
+}
+</style>
