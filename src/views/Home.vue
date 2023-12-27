@@ -22,7 +22,7 @@
   <div class="bg-[#eeeee1] h-62">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24">
       <MealPreview
-        v-for="(ingredient, index) of ingredients.splice(1, 4)"
+        v-for="(ingredient, index) of ingredients"
         :key="ingredient.idCategory"
         :meal="ingredient"
       />
@@ -39,10 +39,17 @@ import MealPreview from "../components/MealPreview.vue";
 const meals = computed(() => store.state.meals);
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const ingredients = ref([]);
+const randomNumber = Math.floor(Math.random() * 10) + 1;
+const secondNumber = randomNumber + 4;
+console.log(randomNumber);
+console.log(secondNumber);
 
 onMounted(async () => {
   const response = await axiosClient.get("/categories.php");
   console.log(response.data);
-  ingredients.value = response.data.categories;
+  ingredients.value = response.data.categories.slice(
+    randomNumber,
+    secondNumber
+  );
 });
 </script>
