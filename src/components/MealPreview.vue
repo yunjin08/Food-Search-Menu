@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-white shadow border-[1px] border-[#E8DF91] rounded-xl">
+  <div
+    class="bg-white h-[30rem] shadow border-[1px] border-[#E8DF91] rounded-xl my-8 overflow-scroll"
+  >
     <div>
       <img
         :src="meal.strCategoryThumb"
@@ -8,14 +10,11 @@
       />
     </div>
     <div class="p-3">
-      <h3 class="bold font-serif mt-2 text-xl">{{ meal.strCategory }}</h3>
+      <h3 class="bold font-serif mt-2 text-xl text-[#8e8852]">
+        {{ meal.strCategory }}
+      </h3>
       <div class="flex items-center justify-between my-2">
-        <a
-          :href="meal.strYoutube"
-          target="_blank"
-          class="px-3 py-2 rounded border-2 border-red-500 bg-red-500 hover:bg-red-600 text-white transition-colors"
-          >Youtube</a
-        >
+        <p class="text-sm text-[#a7a16a]">{{ meal.strCategoryDescription }}</p>
       </div>
     </div>
   </div>
