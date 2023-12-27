@@ -8,7 +8,7 @@
       {{ letter }}
     </router-link>
   </div>
-
+  <pre>{{ meals }}</pre>
   <div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 px-24">
       <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />

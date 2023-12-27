@@ -8,8 +8,11 @@
       />
     </router-link>
     <div class="p-3">
-      <h3 class="bold">{{ meal.strMeal }}</h3>
-      <p>S</p>
+      <h3 class="font-semibold font-serif mt-2 text-xl text-[#5d582a]">
+        {{ meal.strMeal }}
+      </h3>
+      <p class="text-sm text-[#7d784a]">{{ meal.strArea }}</p>
+      <p class="text-sm text-[#7d784a]">{{ meal.strCategory }}</p>
       <div class="flex items-center justify-between">
         <a
           :href="meal.strYoutube"
