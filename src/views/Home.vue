@@ -20,7 +20,6 @@
     </div>
     <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
   </div>
-  <pre>{{ ingredients }}</pre>
 
   <div class="bg-[#f9f9f2] px-8 flex items-center flex-col justify-center h-62">
     <h1 class="font-serif mt-10 text-2xl font-medium text-[#696223]">

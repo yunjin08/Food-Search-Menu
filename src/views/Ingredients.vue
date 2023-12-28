@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="min-h-[90vh] bg-[#f9f9f2]">
     <div class="p-8 pb-0 px-24">
       <input
         v-model="keyword"
@@ -10,20 +10,30 @@
     </div>
     <div class="p-8">
       <h1 class="text-4xl font-bold mb-4">Ingredients</h1>
-      <router-link
-        :to="{
-          name: 'byIngredients',
-          params: { ingredients: ingredient.strIngredient },
-        }"
-        v-for="ingredient of computedIngredients"
-        :key="ingredient.idIngredient"
-        class="block bg-white rounded p-3 mb-3 shadow"
+      <div class="grid grid-cols-4 gap-3">
+        <router-link
+          :to="{
+            name: 'byIngredients',
+            params: { ingredients: ingredient.strIngredient },
+          }"
+          v-for="ingredient of computedIngredients"
+          :key="ingredient.idIngredient"
+          class="block bg-white p-3 mb-3 shadow border-[1px] border-[#514c1c] rounded-2xl"
+        >
+          <h3
+            class="text-2xl calligraphy-paragraph text-[#514c1c] font-semibold rounded-2xl"
+          >
+            {{ ingredient.strIngredient }}
+          </h3>
+        </router-link>
+      </div>
+      <h3
+        v-if="computedIngredients.length === 0 && keyword.trim() !== ''"
+        class="flex justify-center items-center font-serif text-3xl text-[#696223] h-[80vh]"
       >
-        <h3 class="text-2xl font-bold">
-          {{ ingredient.strIngredient }}
-        </h3>
-        <p>{{ ingredient.strDescription }}</p>
-      </router-link>
+        We apologize, but there are currently no available meals for the
+        selected criteria.
+      </h3>
     </div>
   </div>
 </template>
