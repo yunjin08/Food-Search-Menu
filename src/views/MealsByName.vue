@@ -48,6 +48,7 @@ const meals = computed(() => {
 const ingredients = computed(() => {
   return store.state.templateMeals.data;
 });
+console.log(ingredients);
 
 const searchMeals = async () => {
   try {
