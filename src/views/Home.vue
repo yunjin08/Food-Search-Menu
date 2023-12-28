@@ -8,6 +8,7 @@
       <h2 class="calligraphy-paragraph text-4xl font-bold text-[#E8DF91]">
         Recipe Website
       </h2>
+
       <p
         class="max-w-[25rem] font-serif text-lg mt-5 text-center text-[#a9a368]"
       >
@@ -19,6 +20,8 @@
     </div>
     <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
   </div>
+  <pre>{{ ingredients }}</pre>
+
   <div class="bg-[#f9f9f2] px-8 flex items-center flex-col justify-center h-62">
     <h1 class="font-serif mt-10 text-2xl font-medium text-[#696223]">
       Browse Food Menus and Recipes in Different Categories

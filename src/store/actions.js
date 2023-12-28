@@ -17,3 +17,9 @@ export const searchMealsByIngredients = ({ commit }, ingredients) => {
     commit("setMealsByIngredients", data.meals);
   });
 };
+
+export const searchTemplateMeals = ({ commit }) => {
+  axiosClient.get("categories.php").then(({ data }) => {
+    commit("setTemplateMeals", data);
+  });
+};

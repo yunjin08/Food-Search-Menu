@@ -11,4 +11,8 @@ export default {
     loading: true,
     data: [],
   },
+  templateMeals: {
+    loading: true,
+    data: [],
+  },
 };

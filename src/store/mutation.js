@@ -9,3 +9,8 @@ export const setMealsByLetter = (state, meals) => {
 export const setMealsByIngredients = (state, meals) => {
   state.mealsByIngredients.data = meals;
 };
+
+export const setTemplateMeals = (state, meals) => {
+  console.log(meals);
+  state.templateMeals.data = meals;
+};

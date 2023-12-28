@@ -34,17 +34,19 @@ import { ref, computed, onMounted } from "vue";
 import store from "../store";
 import MealItem from "../components/MealItem.vue";
 import { useRoute } from "vue-router";
-import axiosClient from "../axiosClient";
 import Loading from "../components/Loading.vue";
 import MealPreview from "../components/MealPreview.vue";
 
 const route = useRoute();
 const keyword = ref("");
 const isLoading = ref(true);
-const ingredients = ref([]);
 
 const meals = computed(() => {
   return store.state.searchedMeals.data;
+});
+
+const ingredients = computed(() => {
+  return store.state.templateMeals.data;
 });
 
 const searchMeals = async () => {
@@ -60,10 +62,8 @@ onMounted(async () => {
   if (keyword.value) {
     searchMeals();
   }
-
   try {
-    const response = await axiosClient.get("/categories.php");
-    ingredients.value = response.data.categories;
+    await store.dispatch("searchTemplateMeals");
   } catch (error) {
     console.log(error);
   } finally {
