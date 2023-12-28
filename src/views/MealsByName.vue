@@ -9,7 +9,7 @@
     />
   </div>
   <div
-    v-if="meals.length === 0"
+    v-if="meals && meals.length === 0"
     class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24"
   >
     <MealPreview
@@ -20,12 +20,21 @@
   </div>
   <Loading v-if="isLoading" />
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 px-24">
-    <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
-  </div>
+  <div>
+    <div
+      v-if="meals && meals.length > 0"
+      class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 px-24"
+    >
+      <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
+    </div>
 
-  <div v-if="!meals" class="flex justify-center text-gray-600">
-    There are no meals
+    <div
+      v-else
+      class="flex justify-center items-center font-serif text-3xl text-[#696223] h-[80vh]"
+    >
+      We apologize, but there are currently no available meals for the selected
+      criteria.
+    </div>
   </div>
 </template>
 
@@ -52,6 +61,7 @@ console.log(ingredients);
 
 const searchMeals = async () => {
   try {
+    // Reset meals to an empty array before making a new search
     await store.dispatch("searchMeals", keyword.value);
   } catch (error) {
     console.log(error);
