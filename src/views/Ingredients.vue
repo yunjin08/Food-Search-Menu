@@ -4,7 +4,7 @@
       <input
         v-model="keyword"
         type="text"
-        class="rounded border-gray-200 w-full text-[#959041] border-2 focus:outline-none focus:border-[#959041] focus:ring-[#959041] focus:ring-1"
+        class="rounded border-gray-200 w-full text-[#5d582a] border-2 focus:outline-none focus:border-[#959041] focus:ring-[#959041] focus:ring-1"
         placeholder="Search for Ingredients"
       />
     </div>

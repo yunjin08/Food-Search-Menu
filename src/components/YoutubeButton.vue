@@ -2,9 +2,9 @@
   <a
     :href="href"
     target="_blank"
-    class="px-3 py-2 rounded border-2 text-white bg-red-600"
+    class="px-3 py-2 rounded-lg border-2 text-white bg-red-600 hover:bg-red-700"
   >
-    Youtube
+    Watch on Youtube
   </a>
 </template>
 

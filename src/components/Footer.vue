@@ -1,26 +1,26 @@
 <template>
   <header
-    class="bg-white flex-col border-t-2 shadow border-[#e8e8d2] h-36 flex items-center justify-center font-serif text-xl"
+    class="bg-white relative flex-col border-t-2 shadow border-[#e8e8d2] h-52 flex items-center font-serif text-xl"
   >
     <img
       src="../images/bg3.webp"
-      class="object-cover absolute w-[100vw] h-36 left-0 opacity-[0.2] pointer-events-none"
+      class="object-cover absolute w-[100vw] h-52 left-0 opacity-[0.2] pointer-events-none"
       alt="bg-3"
     />
-    <div class="z-10 mt-3 flex gap-32 text-lg">
-      <div class="flex flex-col text-[#a7a16a]">
+    <div class="z-10 flex gap-40 text-lg mt-6 text-[#504b22]">
+      <div class="flex flex-col gap-1">
         <h1 class="font-bold">Jed Edison Donaire</h1>
         <h2>University of the Philippines</h2>
         <p class="font-bold">
           Contact me <span class="font-normal"> | 966 278 1586 </span>
         </p>
       </div>
-      <div class="flex flex-col text-[#a7a16a]">
+      <div class="flex flex-col gap-1">
         <h1>API @ TheMealDB</h1>
         <h2>United Kingdom</h2>
         <h3>themealdb.com</h3>
       </div>
-      <div class="flex flex-col text-[#a7a16a]">
+      <div class="flex flex-col justify-center gap-1">
         <h1>Follow Me</h1>
         <div className="flex items-center justify-center xl:justify-start ">
           <a
@@ -48,7 +48,7 @@
       </div>
     </div>
     <p
-      class="text-sm font-bold w-full flex items-center justify-center mt-5 text-[#a7a16a]"
+      class="absolute bottom-2 text-sm font-bold w-full flex items-center justify-center text-[#504b22]"
     >
       &#169; 2023. Jed Edison Donaire
     </p>
