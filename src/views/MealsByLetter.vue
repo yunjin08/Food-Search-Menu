@@ -1,10 +1,11 @@
 <template>
-  <div class="bg-[#f9f9f2] min-h-[90vh]">
+  <div class="bg-[#f9f9f2] min-h-[100vh]">
     <div class="flex justify-center gap-2 mt-2">
       <router-link
         :to="{ name: 'byLetter', params: { letter } }"
         v-for="letter of letters"
         :key="letter"
+        @click="handledDecision()"
       >
         {{ letter }}
       </router-link>
@@ -28,7 +29,7 @@
         <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
       </div>
       <div
-        v-else
+        v-if="(!meals || !(meals.length > 0)) && (isDecision || router)"
         class="flex justify-center items-center font-serif text-3xl text-[#696223] h-[80vh]"
       >
         We apologize, but there are currently no available meals for the
@@ -51,7 +52,12 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const meals = computed(() => store.state.mealsByLetter.data || []);
 const ingredients = computed(() => store.state.templateMeals.data);
 const isLoading = ref(true);
+const isDecision = ref(false);
 const router = route.params.letter;
+
+const handledDecision = () => {
+  isDecision.value = true;
+};
 
 onMounted(async () => {
   store.dispatch("searchMealsByLetter", route.params.letter);

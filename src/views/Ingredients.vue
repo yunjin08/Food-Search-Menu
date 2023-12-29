@@ -8,6 +8,9 @@
         placeholder="Search for Ingredients"
       />
     </div>
+    <Loading v-if="isLoading" />
+    {{ console.log(isLoading) }}
+
     <div class="p-8">
       <h1 class="text-4xl font-bold mb-4">Ingredients</h1>
       <div class="grid grid-cols-4 gap-3">
@@ -18,7 +21,7 @@
           }"
           v-for="ingredient of computedIngredients"
           :key="ingredient.idIngredient"
-          class="block bg-white p-3 mb-3 shadow border-[1px] border-[#514c1c] rounded-2xl"
+          class="block bg-white p-3 mb-3 shadow border-[1px] border-[#514c1c] rounded-2xl hover:scale-105 transition"
         >
           <h3
             class="text-2xl calligraphy-paragraph text-[#514c1c] font-semibold rounded-2xl"
@@ -42,9 +45,11 @@
 import { computed } from "@vue/reactivity";
 import { onMounted, ref } from "vue";
 import axiosClient from "../axiosClient";
+import Loading from "../components/Loading.vue";
 
 const keyword = ref("");
 const ingredients = ref([]);
+const isLoading = ref(true);
 
 const computedIngredients = computed(() => {
   if (!computedIngredients) return ingredients;
@@ -58,9 +63,15 @@ const computedIngredients = computed(() => {
   });
 });
 
-onMounted(() => {
-  axiosClient.get("list.php?i=list").then(({ data }) => {
-    ingredients.value = data.meals;
-  });
+onMounted(async () => {
+  try {
+    await axiosClient.get("list.php?i=list").then(({ data }) => {
+      ingredients.value = data.meals;
+    });
+  } catch (error) {
+    console.log(error);
+  } finally {
+    isLoading.value = false;
+  }
 });
 </script>

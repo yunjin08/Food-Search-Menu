@@ -30,7 +30,7 @@
       </div>
 
       <div
-        v-else
+        v-if="isDecision && !meals"
         class="flex justify-center items-center font-serif text-3xl text-[#696223] h-[80vh]"
       >
         We apologize, but there are currently no available meals for the
@@ -51,6 +51,7 @@ import MealPreview from "../components/MealPreview.vue";
 const route = useRoute();
 const keyword = ref("");
 const isLoading = ref(true);
+const isDecision = ref(false);
 
 const meals = computed(() => {
   return store.state.searchedMeals.data;
@@ -67,6 +68,8 @@ const searchMeals = async () => {
     await store.dispatch("searchMeals", keyword.value);
   } catch (error) {
     console.log(error);
+  } finally {
+    isDecision.value = true;
   }
 };
 
