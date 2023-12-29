@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-[#f9f9f2] min-h-[90vh]">
-    <div class="p-8 pb-0 px-24">
+  <div class="bg-[#f9f9f2] min-h-[100vh]">
+    <div class="p-7 pb-0 px-24">
       <input
         v-model="keyword"
         type="text"
-        class="rounded border-gray-200 w-full border-2"
+        class="rounded border-gray-200 w-full text-[#959041] border-2 focus:outline-none focus:border-[#959041] focus:ring-[#959041] focus:ring-1"
         placeholder="Search for Meals"
         @change="searchMeals"
       />
@@ -88,3 +88,12 @@ onMounted(async () => {
   }
 });
 </script>
+
+<style scoped>
+input {
+  border: 2px solid #837e30;
+}
+input::placeholder {
+  color: #959041;
+}
+</style>

@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-[90vh] bg-[#f9f9f2]">
-    <div class="p-8 pb-0 px-24">
+    <div class="p-7 pb-0 px-24">
       <input
         v-model="keyword"
         type="text"
-        class="rounded border-gray-200 w-full border-2 mb-3"
+        class="rounded border-gray-200 w-full text-[#959041] border-2 focus:outline-none focus:border-[#959041] focus:ring-[#959041] focus:ring-1"
         placeholder="Search for Ingredients"
       />
     </div>
@@ -12,7 +12,7 @@
     {{ console.log(isLoading) }}
 
     <div class="p-8">
-      <h1 class="text-4xl font-bold mb-4">Ingredients</h1>
+      <h1 class="text-4xl font-bold mb-4 text-[#454010]">Ingredients</h1>
       <div class="grid grid-cols-4 gap-3">
         <router-link
           :to="{
@@ -75,3 +75,12 @@ onMounted(async () => {
   }
 });
 </script>
+
+<style scoped>
+input {
+  border: 2px solid #837e30;
+}
+input::placeholder {
+  color: #959041;
+}
+</style>

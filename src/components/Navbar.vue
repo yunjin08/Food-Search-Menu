@@ -9,7 +9,9 @@
     />
     <p>Welcome to NoshNest Website</p>
   </header>
-  <div class="bg-white shadow-md h-20 flex justify-between items-stretch px-12">
+  <div
+    class="bg-[#f9f9f2] border-b-[1.5px] border-[#403b0a] text-[#454010] shadow-md h-20 flex justify-between items-stretch px-12"
+  >
     <router-link
       :to="{ name: 'home' }"
       class="inline-flex items-center h-full px-1"
@@ -17,7 +19,7 @@
       <p class="calligraphy-paragraph text-4xl font-bold">NoshNest</p>
     </router-link>
     <div
-      class="flex items-center justify-center gap-1 border-[1px] border-gray-300 shadow font-serif h-[3rem] mt-4 rounded-3xl overflow-hidden"
+      class="flex items-center justify-center gap-1 border-[1.5px] border-[#403b0a] shadow font-serif h-[3rem] mt-4 rounded-3xl overflow-hidden"
     >
       <router-link
         :to="{ name: 'byName' }"
@@ -41,7 +43,7 @@
     <div class="flex items-center justify-center">
       <router-link
         to="/"
-        class="border-[1px] border-gray-300 shadow px-2 py-1 rounded-2xl font-medium"
+        class="border-[1px] border-[#403b0a] shadow px-2 py-1 rounded-2xl font-medium"
         >Add A Recipe</router-link
       >
     </div>
