@@ -1,12 +1,12 @@
 <template>
   <div
-    class="bg-white custom-scrollbar h-[30rem] shadow border-[1px] border-[#a49c53] rounded-xl mb-10 overflow-y-auto"
+    class="bg-white custom-scrollbar h-[23rem] md:h-[30rem] shadow border-[1px] border-[#a49c53] rounded-xl mb-10 overflow-y-auto"
   >
     <div>
       <img
         :src="meal.strCategoryThumb"
         :alt="meal.strCategory"
-        class="rounded-t-xl h-64 w-full object-cover"
+        class="rounded-t-xl h-40 md:h-64 w-full object-cover"
       />
     </div>
     <div class="p-3">

@@ -1,16 +1,26 @@
 <template>
-  <div class="grid grid-cols-3">
-    <img src="../images/bg1.jpg" class="object-cover h-[43.5rem]" alt="bg1" />
-    <div class="w-[33%vw] h-full flex flex-col items-center justify-center">
-      <h1 class="calligraphy-paragraph text-8xl font-bold text-[#E4DB84]">
+  <div class="grid md:grid-cols-3">
+    <img
+      src="../images/bg1.jpg"
+      class="object-cover w-full md:w-auto h-[15rem] min-450:h-[20rem] md:h-[43.5rem]"
+      alt="bg1"
+    />
+    <div
+      class="md:w-[33%vw] w-full h-[15.5rem] min-450:h-[18rem] md:h-full flex flex-col items-center justify-center"
+    >
+      <h1
+        class="calligraphy-paragraph text-6xl sm:text-7xl md:text-8xl font-bold text-[#E4DB84]"
+      >
         NoshNest
       </h1>
-      <h2 class="calligraphy-paragraph text-4xl font-bold text-[#E8DF91]">
+      <h2
+        class="calligraphy-paragraph text-2xl sm:text-3xl md:text-4xl font-bold text-[#E8DF91]"
+      >
         Recipe Website
       </h2>
 
       <p
-        class="max-w-[25rem] font-serif text-lg mt-5 text-center text-[#a9a368]"
+        class="max-w-[25rem] font-serif px-4 sm:px-0 text-sm sm:text-md md:text-lg mt-5 text-center text-[#a9a368]"
       >
         Explore a treasure trove of mouthwatering recipes crafted with love and
         passion. From quick and easy weeknight meals to indulgent desserts that
@@ -18,19 +28,31 @@
         novice cooks and seasoned chefs.
       </p>
     </div>
-    <img src="../images/bg2.jpg" class="object-cover h-[43.5rem]" alt="bg2" />
+    <img
+      src="../images/bg2.jpg"
+      class="object-cover w-full md:w-auto h-[15rem] min-450:h-[20rem] md:h-[43.5rem]"
+      alt="bg2"
+    />
   </div>
 
-  <div class="bg-[#f9f9f2] px-8 flex items-center flex-col justify-center h-62">
-    <h1 class="font-serif mt-10 text-2xl font-medium text-[#696223]">
+  <div
+    class="bg-[#f9f9f2] px-4 md:px-8 flex items-center flex-col justify-center h-62"
+  >
+    <h1
+      class="font-serif mt-5 md:mt-10 text-xl md:text-2xl text-center font-medium text-[#696223]"
+    >
       Browse Food Menus and Recipes in Different Categories
     </h1>
-    <p class="text-[#9b923b] max-w-[30rem] text-center">
+    <p
+      class="text-[#9b923b] md:max-w-[30rem] text-sm md:text-lg sm:max-w-[28rem] max-w-[23rem] text-center mb-3"
+    >
       Appetizers to desserts, streamline your search and discover a world of
       diverse recipes designed to suit every taste and occasion.
     </p>
     <Loading v-if="isLoading" />
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24">
+    <div
+      class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 md:gap-4 xl:gap-8 md:p-8 min-450:px-6 md:px-12 xl:px-24"
+    >
       <MealPreview
         v-for="(ingredient, index) of ingredients"
         :key="ingredient.idCategory"
