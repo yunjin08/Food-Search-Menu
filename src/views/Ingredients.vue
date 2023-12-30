@@ -7,11 +7,14 @@
         class="rounded border-gray-200 w-full text-[#5d582a] border-2 focus:outline-none focus:border-[#959041] focus:ring-[#959041] focus:ring-1"
         placeholder="Search for Ingredients"
       />
+      <p v-if="!keyword" class="text-[0.8rem] text-[#5d582a] pl-1">
+        Search meals for detailed description and recipes.
+      </p>
     </div>
     <Loading v-if="isLoading" />
     {{ console.log(isLoading) }}
 
-    <div class="p-8">
+    <div :class="['p-8', { 'pt-[3.2rem]': keyword }]">
       <h1 class="text-4xl font-bold mb-4 text-[#454010]">Ingredients</h1>
       <div class="grid grid-cols-4 gap-3">
         <router-link

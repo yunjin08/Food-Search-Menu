@@ -8,10 +8,22 @@
         placeholder="Search for Meals"
         @change="searchMeals"
       />
+      <p v-if="!keyword" class="text-[0.8rem] text-[#5d582a] pl-1">
+        Search meals for detailed description and recipes.
+      </p>
     </div>
     <div
       v-if="meals && meals.length === 0"
-      class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24"
+      :class="[
+        'grid',
+        'grid-cols-1',
+        'md:grid-cols-4',
+        'md:grid-cols-3',
+        'gap-8',
+        'p-8',
+        'px-24',
+        { 'pt-[3.2rem]': keyword },
+      ]"
     >
       <MealPreview
         v-for="ingredient of ingredients"
@@ -24,7 +36,16 @@
     <div>
       <div
         v-if="meals && meals.length > 0"
-        class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 px-24"
+        :class="[
+          'grid',
+          'grid-cols-1',
+          'md:grid-cols-4',
+          'md:grid-cols-3',
+          'gap-8',
+          'p-8',
+          'px-24',
+          { 'pt-[3.2rem]': keyword },
+        ]"
       >
         <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
       </div>
@@ -60,7 +81,6 @@ const meals = computed(() => {
 const ingredients = computed(() => {
   return store.state.templateMeals.data;
 });
-console.log(ingredients);
 
 const searchMeals = async () => {
   try {

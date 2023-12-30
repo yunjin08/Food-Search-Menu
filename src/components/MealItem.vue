@@ -12,18 +12,17 @@
         {{ meal.strMeal }}
       </h3>
       <p class="text-md mt-1 mb-1 text-[#5d582a] font-medium">
-        Area: {{ meal.strArea }}
+        Area: {{ meal.strArea || "None" }}
       </p>
       <p class="text-md text-[#5d582a] font-medium">
-        Category: {{ meal.strCategory }}
+        Category: {{ meal.strCategory || "None" }}
       </p>
       <div class="flex items-center justify-between mt-4 mb-2">
-        <a
-          :href="meal.strYoutube"
-          target="_blank"
-          class="px-6 py-2 rounded border-2 border-red-500 bg-red-500 hover:bg-red-600 text-white transition-colors"
-          >Watch on Youtube</a
-        >
+        <router-link
+          :to="{ name: 'mealDetails', params: { id: meal.idMeal } }"
+          class="px-6 py-2 rounded hover:cursor-pointer bg-[#918a51] hover:bg-red-600 text-white transition-colors"
+          >Click for More Info
+        </router-link>
       </div>
     </div>
   </div>

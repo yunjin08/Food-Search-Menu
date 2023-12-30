@@ -1,15 +1,5 @@
 <template>
-  <div class="flex justify-center gap-2 mt-2">
-    <router-link
-      :to="{ name: 'byLetter', params: { letter } }"
-      v-for="letter of letters"
-      :key="letter"
-    >
-      {{ letter }}
-    </router-link>
-  </div>
-
-  <div>
+  <div class="min-h-[90vh]">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 px-24">
       <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
     </div>
