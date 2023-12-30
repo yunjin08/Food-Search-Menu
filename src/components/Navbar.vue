@@ -10,7 +10,7 @@
     <p>Welcome to NoshNest Website</p>
   </header>
   <div
-    class="bg-[#f9f9f2] border-b-[1.5px] border-[#403b0a] text-[#454010] shadow-md h-20 flex justify-between items-stretch px-12"
+    class="bg-[#f9f9f2] text-[#454010] shadow-md h-20 flex justify-between items-stretch px-12"
   >
     <router-link
       :to="{ name: 'home' }"

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-[90vh] bg-[#f9f9f2]">
+  <div class="min-h-[90vh]">
     <div class="p-7 pb-0 px-24">
       <input
         v-model="keyword"

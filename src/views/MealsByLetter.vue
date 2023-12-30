@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#f9f9f2] min-h-[100vh]">
+  <div class="min-h-[100vh]">
     <div class="pt-7 text-lg text-[#5d582a] flex justify-center gap-2">
       <router-link
         :to="{ name: 'byLetter', params: { letter } }"
