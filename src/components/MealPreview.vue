@@ -10,11 +10,15 @@
       />
     </div>
     <div class="p-3">
-      <h3 class="font-semibold font-serif mt-2 text-xl text-[#5d582a]">
+      <h3
+        class="font-semibold font-serif mt-2 text-lg md:text-xl text-[#5d582a]"
+      >
         {{ meal.strCategory }}
       </h3>
       <div class="flex items-center justify-between my-2">
-        <p class="text-sm text-[#7d784a]">{{ meal.strCategoryDescription }}</p>
+        <p class="text-[0.7rem] md:text-sm text-[#7d784a]">
+          {{ meal.strCategoryDescription }}
+        </p>
       </div>
     </div>
   </div>

@@ -1,11 +1,14 @@
 <template>
-  <div class="min-h-[100vh]">
-    <div class="pt-7 text-lg text-[#5d582a] flex justify-center gap-2">
+  <div class="min-h-[100vh] flex flex-col items-center justify-center">
+    <div
+      class="pt-7 text-lg text-[#5d582a] flex items-center justify-center gap-2"
+    >
       <router-link
         :to="{ name: 'byLetter', params: { letter } }"
         v-for="letter of letters"
         :key="letter"
         @click="handledDecision()"
+        class="w-full flex"
       >
         {{ letter }}
       </router-link>

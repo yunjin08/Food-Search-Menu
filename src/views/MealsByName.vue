@@ -1,14 +1,17 @@
 <template>
   <div class="min-h-[100vh]">
-    <div class="p-7 pb-0 px-24">
+    <div class="p-7 pb-0 px-5 min-450:px-12 md:px-24">
       <input
         v-model="keyword"
         type="text"
-        class="rounded border-gray-200 w-full text-[#5d582a] border-2 focus:outline-none focus:border-[#959041] focus:ring-[#959041] focus:ring-1"
+        class="rounded border-gray-200 text-sm w-full text-[#5d582a] border-2 focus:outline-none focus:border-[#959041] focus:ring-[#959041] focus:ring-1"
         placeholder="Search for Meals"
         @change="searchMeals"
       />
-      <p v-if="!keyword" class="text-[0.8rem] text-[#5d582a] pl-1">
+      <p
+        v-if="!keyword"
+        class="text-[0.6rem] sm:text-[0.7rem] md:text-[0.8rem] text-[#5d582a] pl-1"
+      >
         Search meals for detailed description and recipes.
       </p>
     </div>
@@ -17,11 +20,14 @@
       :class="[
         'grid',
         'grid-cols-1',
-        'md:grid-cols-4',
+        'sm:grid-cols-2',
+        'xl:grid-cols-4',
         'md:grid-cols-3',
-        'gap-8',
+        'lg:gap-8',
+        'gap-4',
         'p-8',
-        'px-24',
+        'lg:px-24',
+        'px-8',
         { 'pt-[3.2rem]': keyword },
       ]"
     >
@@ -39,11 +45,14 @@
         :class="[
           'grid',
           'grid-cols-1',
-          'md:grid-cols-4',
+          'sm:grid-cols-2',
+          'xl:grid-cols-4',
           'md:grid-cols-3',
-          'gap-8',
+          'lg:gap-8',
+          'gap-4',
           'p-8',
-          'px-24',
+          'lg:px-24',
+          'px-8',
           { 'pt-[3.2rem]': keyword },
         ]"
       >
