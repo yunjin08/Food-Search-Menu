@@ -1,12 +1,12 @@
 <template>
-  <div class="grid md:grid-cols-3">
+  <div class="grid lg:grid-cols-3">
     <img
       src="../images/bg1.jpg"
-      class="object-cover w-full md:w-auto h-[15rem] min-450:h-[20rem] md:h-[43.5rem]"
+      class="object-cover w-full lg:w-auto h-[15rem] min-450:h-[20rem] md:h-[25rem] lg:h-[43.5rem]"
       alt="bg1"
     />
     <div
-      class="md:w-[33%vw] w-full h-[15.5rem] min-450:h-[18rem] md:h-full flex flex-col items-center justify-center"
+      class="lg:w-[33%vw] w-full h-[15.5rem] min-450:h-[18rem] md:h-[25rem] lg:h-full flex flex-col items-center justify-center"
     >
       <h1
         class="calligraphy-paragraph text-6xl sm:text-7xl md:text-8xl font-bold text-[#E4DB84]"
@@ -30,7 +30,7 @@
     </div>
     <img
       src="../images/bg2.jpg"
-      class="object-cover w-full md:w-auto h-[15rem] min-450:h-[20rem] md:h-[43.5rem]"
+      class="object-cover w-full lg:w-auto h-[15rem] min-450:h-[20rem] md:h-[25rem] lg:h-[43.5rem]"
       alt="bg2"
     />
   </div>
