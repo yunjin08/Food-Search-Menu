@@ -8,6 +8,7 @@ import GuestLayout from "../components/GuestLayout.vue";
 import DefaultLayout from "../components/DefaultLayout.vue";
 import MealDetails from "../views/MealDetails.vue";
 import Ingredients from "../views/Ingredients.vue";
+import AddRecipe from "../views/AddRecipe.vue";
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
         path: "/ingredients",
         name: "ingredients",
         component: Ingredients,
+      },
+      {
+        path: "/addrecipe",
+        name: "addRecipe",
+        component: AddRecipe,
       },
     ],
   },

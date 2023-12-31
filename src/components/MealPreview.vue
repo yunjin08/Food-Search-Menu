@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white custom-scrollbar h-[23rem] md:h-[30rem] shadow border-[1px] border-[#a49c53] rounded-xl mb-10 overflow-y-auto"
+    class="bg-white custom-scrollbar h-[23rem] md:h-[30rem] shadow border-[1px] border-[#a49c53] hover:scale-[1.02] transition-all rounded-xl mb-10 overflow-y-auto"
   >
     <div>
       <img

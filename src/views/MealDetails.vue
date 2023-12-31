@@ -7,7 +7,7 @@
     />
     <div class="flex flex-col items-center justify-center max-w-[50%] mx-auto">
       <h1
-        class="text-8xl text-center calligraphy-paragraph font-bold text-[#5d582a] p-8"
+        class="text-[4.2rem] min-450:text-[5.3rem] md:text-[5.8rem] lg:text-8xl text-center calligraphy-paragraph font-bold text-[#5d582a] p-8"
       >
         {{ meal.strMeal }}
       </h1>

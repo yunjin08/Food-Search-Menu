@@ -25,27 +25,27 @@
     >
       <router-link
         :to="{ name: 'byName' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-purple-100"
+        class="inline-flex items-center px-2 h-full transition-colors hover:bg-[#f1eed2]"
       >
         Search Meals
       </router-link>
       <router-link
         :to="{ name: 'byLetter' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-purple-100"
+        class="inline-flex items-center px-2 h-full transition-colors hover:bg-[#f1eed2]"
       >
         Meals by letter
       </router-link>
       <router-link
         :to="{ name: 'ingredients' }"
-        class="inline-flex items-center h-full transition-colors hover:bg-purple-100"
+        class="inline-flex items-center h-full transition-colors hover:bg-[#f1eed2]"
       >
         Meals by Ingredients
       </router-link>
     </div>
     <div class="md:flex hidden items-center justify-center">
       <router-link
-        to="/"
-        class="border-[1px] border-[#403b0a] shadow px-2 py-1 rounded-2xl font-medium"
+        :to="{ name: 'addRecipe' }"
+        class="border-[1px] border-[#403b0a] shadow px-2 py-1 rounded-2xl font-medium hover:bg-[#f1eed2]"
         >Add A Recipe</router-link
       >
     </div>
