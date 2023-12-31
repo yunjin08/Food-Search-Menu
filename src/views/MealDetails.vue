@@ -17,7 +17,7 @@
         class="w-[30rem] border-2 border-[#5d582a]"
       />
       <div
-        class="grid text-[#5d582a] grid-cols-1 mt-2 sm:grid-cols-3 text-lg py-2 justify-evenly text-center"
+        class="grid text-[#5d582a] grid-rows-3 mt-2 md:grid-cols-3 text-md md:text-lg py-2 justify-evenly text-center h-[8rem] md:h-[5rem]"
       >
         <div>
           <strong class="font-bold text-[#5d582a]">Category:</strong>
@@ -33,9 +33,11 @@
         </div>
       </div>
 
-      <div class="flex text-[#5d582a] w-full">
+      <div class="flex md:flex-row items-center flex-col text-[#5d582a] w-full">
         <div class="flex flex-col w-[50%] justify-center items-center">
-          <h2 class="text-2xl just font-semibold mb-3">Ingredients</h2>
+          <h2 class="text-xl md:text-2xl just font-semibold mb-3">
+            Ingredients
+          </h2>
           <ul>
             <template v-for="ind in 20" :key="ind">
               <li v-if="meal[`strIngredient${ind}`]">
@@ -44,8 +46,10 @@
             >
           </ul>
         </div>
-        <div class="flex flex-col w-[50%] justify-center items-center">
-          <h2 class="text-2xl font-semibold mb-3">Measurements</h2>
+        <div
+          class="flex flex-col pt-4 md:pt-0 w-[50%] justify-center items-center"
+        >
+          <h2 class="text-xl md:text-2xl font-semibold mb-3">Measurements</h2>
           <ul>
             <template v-for="ind in 20" :key="ind">
               <li v-if="meal[`strMeasure${ind}`] != 0">

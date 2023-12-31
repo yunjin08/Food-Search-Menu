@@ -24,7 +24,7 @@
       <div class="flex items-center justify-between mt-4 mb-2">
         <router-link
           :to="{ name: 'mealDetails', params: { id: meal.idMeal } }"
-          class="px-5 md:px-6 md:py-2 py-1 rounded hover:cursor-pointer bg-[#918a51] hover:bg-red-600 text-white transition-colors"
+          class="px-5 md:px-6 md:py-2 py-1 rounded hover:cursor-pointer bg-[#918a51] hover:bg-[#7c753c] text-white transition-colors"
           >Click for More Info
         </router-link>
       </div>

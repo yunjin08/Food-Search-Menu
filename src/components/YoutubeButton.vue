@@ -2,7 +2,7 @@
   <a
     :href="href"
     target="_blank"
-    class="px-3 py-2 rounded-lg border-2 text-white bg-red-600 hover:bg-red-700"
+    class="text-sm min-450:text-md px-3 py-2 rounded-lg border-2 text-white bg-red-600 hover:bg-red-700"
   >
     Watch on Youtube
   </a>
