@@ -21,23 +21,26 @@
       </p>
     </router-link>
     <div
-      class="flex items-center justify-center gap-1 border-[1.5px] text-center text-sm md:text-md border-[#403b0a] shadow font-serif h-[3rem] mb-5 md:mb-0 mt-4 rounded-3xl overflow-hidden"
+      class="flex items-center justify-center border-[1.5px] text-center text-sm md:text-md border-[#403b0a] shadow font-serif h-[3rem] mb-5 md:mb-0 mt-4 rounded-3xl overflow-hidden"
     >
       <router-link
         :to="{ name: 'byName' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-[#f1eed2]"
+        class="inline-flex items-center px-3 h-full transition-colors hover:bg-[#f1eed2]"
+        exact-active-class="custom-exact-active-class"
       >
         Search Meals
       </router-link>
       <router-link
         :to="{ name: 'byLetter' }"
-        class="inline-flex items-center px-2 h-full transition-colors hover:bg-[#f1eed2]"
+        class="inline-flex items-center px-3 h-full transition-colors hover:bg-[#f1eed2]"
+        exact-active-class="custom-exact-active-class"
       >
         Meals by letter
       </router-link>
       <router-link
         :to="{ name: 'ingredients' }"
         class="inline-flex items-center h-full transition-colors hover:bg-[#f1eed2]"
+        exact-active-class="custom-exact-active-class"
       >
         Meals by Ingredients
       </router-link>

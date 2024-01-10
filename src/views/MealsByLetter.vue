@@ -15,7 +15,7 @@
     </div>
     <div
       v-if="meals.length === 0 && !$route.params.letter"
-      class="grid grid-cols-1 md:grid-cols-4 gap-8 p-8 px-24"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 p-8 px-24"
     >
       <MealPreview
         v-for="ingredient of ingredients"
@@ -27,7 +27,7 @@
     <div>
       <div
         v-if="meals && meals.length > 0"
-        class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 px-24"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 p-8 px-24"
       >
         <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
       </div>

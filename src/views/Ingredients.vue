@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-[90vh]">
-    <div class="p-7 pb-0 px-24">
+    <div class="p-7 pb-0 px-5 min-450:px-12 md:px-24">
       <input
         v-model="keyword"
         type="text"
@@ -16,7 +16,9 @@
 
     <div :class="['p-8', { 'pt-[3.2rem]': keyword }]">
       <h1 class="text-4xl font-bold mb-4 text-[#454010]">Ingredients</h1>
-      <div class="grid grid-cols-4 gap-3">
+      <div
+        class="grid grid-cols-1 min-350:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3"
+      >
         <router-link
           :to="{
             name: 'byIngredients',
