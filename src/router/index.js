@@ -24,11 +24,17 @@ const routes = [
         path: "/by-name/:name?",
         name: "byName",
         component: MealsByName,
+        meta: {
+          linkExactActiveClass: "custom-exact-active-class",
+        },
       },
       {
         path: "/by-letter/:letter?",
         name: "byLetter",
         component: MealsByLetter,
+        meta: {
+          linkExactActiveClass: "custom-exact-active-class",
+        },
       },
       {
         path: "/by-ingredients/:ingredients?",
@@ -39,6 +45,9 @@ const routes = [
         path: "/ingredients",
         name: "ingredients",
         component: Ingredients,
+        meta: {
+          linkExactActiveClass: "custom-exact-active-class",
+        },
       },
       {
         path: "/addrecipe",
