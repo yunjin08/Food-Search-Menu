@@ -47,3 +47,7 @@ body {
 .custom-exact-active-class {
   background-color: #f1eed2;
 }
+
+.mealItems {
+  @apply;
+}
