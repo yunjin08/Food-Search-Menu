@@ -1,17 +1,34 @@
 <template>
   <div class="min-h-[100vh] flex flex-col items-center justify-center">
     <div
-      class="pt-7 text-lg text-[#5d582a] flex items-center justify-center gap-2"
+      class="pt-7 text-lg text-[#5d582a] flex min-450:flex-row flex-col items-center justify-center gap-1 min-450:gap-1 sm:gap-2"
     >
-      <router-link
-        :to="{ name: 'byLetter', params: { letter } }"
-        v-for="letter of letters"
-        :key="letter"
-        @click="handledDecision()"
-        class="w-full flex"
+      <div
+        class="flex items-center justify-center gap-2 min-350:gap-3 min-450:gap-1 sm:gap-2"
       >
-        {{ letter }}
-      </router-link>
+        <router-link
+          :to="{ name: 'byLetter', params: { letter } }"
+          v-for="letter of firstLetters"
+          :key="letter"
+          @click="handledDecision()"
+          class="flex"
+        >
+          {{ letter }}
+        </router-link>
+      </div>
+      <div
+        class="flex items-center justify-center gap-2 min-350:gap-3 min-450:gap-1 sm:gap-2"
+      >
+        <router-link
+          :to="{ name: 'byLetter', params: { letter } }"
+          v-for="letter of secondLetters"
+          :key="letter"
+          @click="handledDecision()"
+          class="flex"
+        >
+          {{ letter }}
+        </router-link>
+      </div>
     </div>
     <div
       v-if="meals.length === 0 && !$route.params.letter"
@@ -51,7 +68,8 @@ import Loading from "../components/Loading.vue";
 import MealPreview from "../components/MealPreview.vue";
 
 const route = useRoute();
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const firstLetters = "ABCDEFGHIJKLM".split("");
+const secondLetters = "NOPQRSTUVWXYZ".split("");
 const meals = computed(() => store.state.mealsByLetter.data || []);
 const ingredients = computed(() => store.state.templateMeals.data);
 const isLoading = ref(true);
